@@ -19,13 +19,7 @@
                     :deleteButton="true"
                     v-on:pokemonId="deletePokemons"/>
         </div>
-        <div class="pokemonList
-                    border
-                    m-auto
-                    d-flex
-                    flex-wrap
-                    justify-content-around">
-
+        <div class="pokemon_list border m-auto d-flex flex-wrap justify-content-around">
             <Card v-on:click="clickOnCard(index), hiddenCards" 
                   class="card-select" 
                   v-for:="(pokemon, index) in pokemonView" 
@@ -115,7 +109,7 @@ export default{
 .card:hover{
     border: 1px dotted #0000ff
 }
-.pokemonList{
+.pokemon_list{
     width:100%;
     height:auto;
     background-color: #dedede;
