@@ -4,14 +4,8 @@
         <div class="col-12 text-center">
             <h4 class="mt-2">Escolhe teus pokemons!</h4>
         </div>
-        <div class="container-slots-general d-flex bg-success bg-opacity-10">
-            <div class="slot-container 
-                    container-fluid 
-                    addPokeComponent 
-                    d-flex
-                    flex-row
-                    justify-content-evenly
-                    ">
+        <div class="container-slots-general">
+            <div class="slot-container container-fluid addPokeComponent d-flex flex-row justify-content-evenly">
         </div>
            
            <Card v-for:="pokemon in selectedPokemons" 
@@ -19,7 +13,7 @@
                     :deleteButton="true"
                     v-on:pokemonId="deletePokemons"/>
         </div>
-        <div class="pokemon_list border m-auto d-flex flex-wrap justify-content-around">
+        <div class="pokemonList border m-auto d-flex flex-wrap justify-content-around">
             <Card v-on:click="clickOnCard(index), hiddenCards" 
                   class="card-select" 
                   v-for:="(pokemon, index) in pokemonView" 
@@ -87,11 +81,18 @@ export default{
 </script>
 <style scoped>
 .create-container{
-    width:70%;
+    width:80%;
+    margin: auto;
+}
+.container-slots-general{
+    display: flex;
+    justify-content: center;
 }
 .slot-container{
     height: 50%;
     width: 90%;
+    justify-content: center;
+    display: flex;
 }
 .card{
     min-width: 4rem;
@@ -109,7 +110,7 @@ export default{
 .card:hover{
     border: 1px dotted #0000ff
 }
-.pokemon_list{
+.pokemonList{
     width:100%;
     height:auto;
     background-color: #dedede;
